@@ -94,7 +94,9 @@ var applyCSS = function () {
           };
         
           (function onPageReady() {
+            if (window.pageReady) {
             applyCSS();
+            }
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
