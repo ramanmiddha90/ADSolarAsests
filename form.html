@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <img id="logo" src="./form_files/sandoz-logo_6.svg" alt="Sandoz Logo"  style = "display:none;">
+        <img id="logo" src="./objects/sandoz-logo_6.svg" alt="Sandoz Logo"  style = "display:none;">
         <div id="form">
             <div id="api" data-name="SelfAsserted" style = "display:none;">
               </div>
@@ -62,7 +62,6 @@
 
         $(document).ready(function () { 
             var version = GetParameterValues('Version');
-            var styleURL="./form_files/style"+version+".css";
             // alert(styleURL)  ;
             let head = document.getElementsByTagName('HEAD')[0];
             
@@ -76,11 +75,11 @@
 
             if(version==2){
                 // Get HTML head element
-                link.href = styleURL;
+                link.href = "./styles/main_v2.css";
                 $("#logo").attr("src","./form_files/sandoz-logo_6.svg");
             }
             else{
-                link.href =  "./form_files/style.css";
+                link.href =  "./styles/main.css";
                 $("#logo").attr("src","./form_files/sandoz-logo_6-1.svg");
             }
                 // Append link element to HTML head
