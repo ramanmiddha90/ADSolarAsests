@@ -94,10 +94,11 @@ var applyCSS = function () {
           };
         
           (function onPageReady() {
+            applyCSS();
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
-                        applyCSS();
+                       
                         applyB2CAddOns();
                     }
                 }, 50);
