@@ -15,6 +15,48 @@
     </div>
 
     <script>
+
+
+var applyCSS = function () { 
+            var version = GetParameterValues('Version');
+
+            console.log(version);
+            
+            // alert(styleURL)  ;
+            let head = document.getElementsByTagName('HEAD')[0];
+            
+            // Create new link Element
+            let link = document.createElement('link');
+
+            // set the attributes for link element
+            link.rel = 'stylesheet';
+
+            link.type = 'text/css';
+
+            if(version==2){
+                // Get HTML head element
+                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
+                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg");
+            }
+            else{
+                link.href =  "https://ramanmiddha90.github.io/ADSolarAsests/styles/main.css";
+                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6-1.svg");
+            }
+                // Append link element to HTML head
+            head.appendChild(link);
+
+            function GetParameterValues(param) {  
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');  
+                for (var i = 0; i < url.length; i++) {  
+                    var urlparam = url[i].split('=');  
+                    if (urlparam[0] == param) {  
+                        return urlparam[1];  
+                    }  
+                    return null;
+                }  
+            }  
+        };
+
         var applyB2CAddOns = function() 
           {
             var createButton=document.querySelector("#continue");
@@ -55,50 +97,12 @@
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
+                        applyCSS();
                         applyB2CAddOns();
                     }
                 }, 50);
         }());
 
-        $(document).ready(function () { 
-            var version = GetParameterValues('Version');
-
-            console.log(version);
-            
-            // alert(styleURL)  ;
-            let head = document.getElementsByTagName('HEAD')[0];
-            
-            // Create new link Element
-            let link = document.createElement('link');
-
-            // set the attributes for link element
-            link.rel = 'stylesheet';
-
-            link.type = 'text/css';
-
-            if(version==2){
-                // Get HTML head element
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
-                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg");
-            }
-            else{
-                link.href =  "https://ramanmiddha90.github.io/ADSolarAsests/styles/main.css";
-                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6-1.svg");
-            }
-                // Append link element to HTML head
-            head.appendChild(link);
-
-            function GetParameterValues(param) {  
-                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');  
-                for (var i = 0; i < url.length; i++) {  
-                    var urlparam = url[i].split('=');  
-                    if (urlparam[0] == param) {  
-                        return urlparam[1];  
-                    }  
-                    return null;
-                }  
-            }  
-        });
      </script>
   </body>
 </html>
