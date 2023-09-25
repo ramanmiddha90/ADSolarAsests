@@ -5,16 +5,16 @@
 
 @font-face{
     font-family:Futura Now Text;
-    src:url(./fonts/FuturaNowTextMedium_normal_normal.eot);
-    src:url(./fonts/FuturaNowTextMedium_normal_normal.woff2) format("woff2"),url(./fonts/FuturaNowTextMedium_normal_normal.woff) format("woff"),url(./fonts/FuturaNowTextMedium_normal_normal.ttf) format("truetype"),url("./fonts/FuturaNowTextMedium_normal_normal.svg#Futura Now Text") format("svg");
+    src:url(https://ramanmiddha90.github.io/ADSolarAsests/fonts/FuturaNowTextMedium_normal_normal.eot);
+    src:url(.https://ramanmiddha90.github.io/ADSolarAsests/fonts/FuturaNowTextMedium_normal_normal.woff2) format("woff2"),url(https://ramanmiddha90.github.io/ADSolarAsests/fonts/FuturaNowTextMedium_normal_normal.woff) format("woff"),url(https://ramanmiddha90.github.io/ADSolarAsests/fonts/FuturaNowTextMedium_normal_normal.ttf) format("truetype"),url("https://ramanmiddha90.github.io/ADSolarAsests/fonts/FuturaNowTextMedium_normal_normal.svg#Futura Now Text") format("svg");
     font-weight:500;
     font-style:normal;
     font-display:swap
 }
 @font-face{
     font-family:Futura Now Text;
-    src:url(./fonts/FuturaNowTextRegular_normal_normal.eot);
-    src:url(./fonts/FuturaNowTextRegular_normal_normal.woff2) format("woff2"),url(./fonts/FuturaNowTextRegular_normal_normal.woff) format("woff"),url(./fonts/FuturaNowTextRegular_normal_normal.ttf) format("truetype"),url("./fonts/FuturaNowTextRegular_normal_normal.svg#Futura Now Text") format("svg");
+    src:url(https://ramanmiddha90.github.io/ADSolarAsests/fonts/FuturaNowTextRegular_normal_normal.eot);
+    src:url(https://ramanmiddha90.github.io/ADSolarAsests/fontsFuturaNowTextRegular_normal_normal.woff2) format("woff2"),url(https://ramanmiddha90.github.io/ADSolarAsests/fonts/FuturaNowTextRegular_normal_normal.woff) format("woff"),url(https://ramanmiddha90.github.io/ADSolarAsests/fonts/FuturaNowTextRegular_normal_normal.ttf) format("truetype"),url("https://ramanmiddha90.github.io/ADSolarAsests/fonts/FuturaNowTextRegular_normal_normal.svg#Futura Now Text") format("svg");
 }
 
 body {
