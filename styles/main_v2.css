@@ -74,9 +74,8 @@ border: 1px
 button {
     align-items: center;
     appearance: button;
-     background-color: #1c59b5;
+    background-color: #1c59b5;
     align-items: center;
-    background-color: rgb(168, 213, 255);
     border-bottom-color: rgb(0, 28, 74);
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -141,9 +140,13 @@ button:hover {
     background-color: #a8d5ff;
 }
 
-#cancel,#email_ver_but_edit{
+#cancel{
     color: rgb(0, 28, 74);
   
+    background-color: #a8d5ff;
+}
+#email_ver_but_edit{
+    color: rgb(0, 28, 74);
     background-color: #a8d5ff;
 }
 #cancel:hover,#email_ver_but_edit:hover{
