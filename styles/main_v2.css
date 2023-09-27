@@ -18,7 +18,7 @@
 }
 
 body {
-background-color: rgb(246,246,246);
+background-color: #F1ECE9;
 font-family: "Futura Now Text",sans-serif;
 text-align: left;
 }
@@ -58,22 +58,23 @@ background-color: white;
 .wrapper {
 width:468px;
 margin: 20px auto;
-border-radius: 2px;
+border-radius: 16px;
 box-shadow: 0px 0px 0px 1px rgba(116,116,116, 0.3);
 opacity: 1;
+border: 1px
 }
 
 #logo {
     display: block;
     width: 250px;
-    margin: 20px auto;
+    margin: 5px auto;
 }
 }
 
 button {
     align-items: center;
     appearance: button;
-    background-color: #a8d5ff;
+     background-color: #1c59b5;
     align-items: center;
     background-color: rgb(168, 213, 255);
     border-bottom-color: rgb(0, 28, 74);
@@ -99,7 +100,7 @@ button {
     /* margin-left: 10px;; */
     box-shadow: rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.075) 0px 1px 1px 0px;
     box-sizing: border-box;
-    color: rgb(0, 28, 74);
+       color: white;
     cursor: pointer;
     display: inline-flex;
     font-family: "Futura Now Text","Volta: Modern: Display";
@@ -135,6 +136,17 @@ button {
 #api{ display:block !important; }
 #logo{ display:block !important; }
 button:hover {
+    color: rgb(0, 28, 74);
+  
+    background-color: #a8d5ff;
+}
+
+#cancel,#email_ver_but_edit{
+    color: rgb(0, 28, 74);
+  
+    background-color: #a8d5ff;
+}
+#cancel:hover,#email_ver_but_edit:hover{
     background-color: #1c59b5;
     color: white;
 }
