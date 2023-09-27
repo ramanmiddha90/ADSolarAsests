@@ -145,11 +145,8 @@ button:hover {
   
     background-color: #a8d5ff;
 }
-#email_ver_but_edit{
-    color: rgb(0, 28, 74);
-    background-color: #a8d5ff;
-}
-#cancel:hover,#email_ver_but_edit:hover{
+
+#cancel:hover{
     background-color: #1c59b5;
     color: white;
 }
