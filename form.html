@@ -59,8 +59,25 @@ var applyCSS = function () {
                     }  
                    
                 }  
+                var versionValueInReferrer=GetVersionInreferrer(param);
+                
+                if(versionValueInReferrer!=null)
+                    return versionValueInReferrer;
                  return null;
             }  
+
+            function GetVersionInreferrer(param)
+            {
+                var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');  
+                for (var i = 0; i < url.length; i++) {  
+                    var urlparam = url[i].split('=');  
+                    if (urlparam[0] == param) {  
+                        return urlparam[1];  
+                    }  
+                   
+                }  
+                 return null;
+            }
         };
 
         var applyB2CAddOns = function() 
