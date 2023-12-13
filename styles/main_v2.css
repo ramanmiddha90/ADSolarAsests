@@ -151,9 +151,9 @@ button:hover {
     background-color: #1c59b5;
     color: white;
 }
-#continue, #cancel, #email_ver_but_edit {
+/* #continue, #cancel, #email_ver_but_edit {
     float: left; 
-}
+} */
 
 #verifying_blurb{
     color: #FFF;
