@@ -15,6 +15,18 @@
     </div>
 
     <script>
+function GetVersionInreferrer(param)
+{
+    var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');  
+    for (var i = 0; i < url.length; i++) {  
+        var urlparam = url[i].split('=');  
+        if (urlparam[0].toUpperCase() == param.toUpperCase()) {  
+            return urlparam[1];  
+        }  
+        
+    }  
+        return null;
+}
 function GetParameterValues(param) {  
                 var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');  
                 for (var i = 0; i < url.length; i++) {  
@@ -31,18 +43,7 @@ function GetParameterValues(param) {
                  return null;
             }  ;
 
-function GetVersionInreferrer(param)
-{
-    var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');  
-    for (var i = 0; i < url.length; i++) {  
-        var urlparam = url[i].split('=');  
-        if (urlparam[0].toUpperCase() == param.toUpperCase()) {  
-            return urlparam[1];  
-        }  
-        
-    }  
-        return null;
-}
+
 
 var applyCSS = function () { 
             var version = GetParameterValues('Version');
