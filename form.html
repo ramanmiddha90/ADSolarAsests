@@ -84,7 +84,8 @@ var applyCSS = function () {
 
         var applyB2CAddOns = function() 
           {
-            var language_code = GetParameterValues('UI_Locales').toUpperCase();
+            var language_code = GetParameterValues('UI_Locales')?.toUpperCase();
+
 
             console.log(version);
             console.log(language_code);
