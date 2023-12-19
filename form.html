@@ -31,6 +31,19 @@ function GetParameterValues(param) {
                  return null;
             }  ;
 
+function GetVersionInreferrer(param)
+{
+    var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');  
+    for (var i = 0; i < url.length; i++) {  
+        var urlparam = url[i].split('=');  
+        if (urlparam[0].toUpperCase() == param.toUpperCase()) {  
+            return urlparam[1];  
+        }  
+        
+    }  
+        return null;
+}
+
 var applyCSS = function () { 
             var version = GetParameterValues('Version');
            
@@ -65,18 +78,7 @@ var applyCSS = function () {
 
             
 
-            function GetVersionInreferrer(param)
-            {
-                var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');  
-                for (var i = 0; i < url.length; i++) {  
-                    var urlparam = url[i].split('=');  
-                    if (urlparam[0].toUpperCase() == param.toUpperCase()) {  
-                        return urlparam[1];  
-                    }  
-                   
-                }  
-                 return null;
-            }
+            
         };
 
         var applyB2CAddOns = function() 
