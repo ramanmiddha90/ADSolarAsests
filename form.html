@@ -15,12 +15,25 @@
     </div>
 
     <script>
-
+function GetParameterValues(param) {  
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');  
+                for (var i = 0; i < url.length; i++) {  
+                    var urlparam = url[i].split('=');  
+                    if (urlparam[0].toUpperCase() == param.toUpperCase()) {  
+                        return urlparam[1];  
+                    }  
+                   
+                }  
+                var versionValueInReferrer=GetVersionInreferrer(param);
+                
+                if(versionValueInReferrer!=null)
+                    return versionValueInReferrer;
+                 return null;
+            }  ;
 
 var applyCSS = function () { 
             var version = GetParameterValues('Version');
-
-            console.log(version);
+           
             
             // alert(styleURL)  ;
             let head = document.getElementsByTagName('HEAD')[0];
@@ -50,28 +63,14 @@ var applyCSS = function () {
                 // Append link element to HTML head
             head.appendChild(link);
 
-            function GetParameterValues(param) {  
-                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');  
-                for (var i = 0; i < url.length; i++) {  
-                    var urlparam = url[i].split('=');  
-                    if (urlparam[0] == param) {  
-                        return urlparam[1];  
-                    }  
-                   
-                }  
-                var versionValueInReferrer=GetVersionInreferrer(param);
-                
-                if(versionValueInReferrer!=null)
-                    return versionValueInReferrer;
-                 return null;
-            }  
+            
 
             function GetVersionInreferrer(param)
             {
                 var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');  
                 for (var i = 0; i < url.length; i++) {  
                     var urlparam = url[i].split('=');  
-                    if (urlparam[0] == param) {  
+                    if (urlparam[0].toUpperCase() == param.toUpperCase()) {  
                         return urlparam[1];  
                     }  
                    
@@ -82,6 +81,11 @@ var applyCSS = function () {
 
         var applyB2CAddOns = function() 
           {
+            var language_code = GetParameterValues('UI_Locales').toUpperCase();
+
+            console.log(version);
+            console.log(language_code);
+
             var createButton=document.querySelector("#continue");
             var changeEmailButton=document.querySelector("#email_ver_but_edit");
             if(createButton)
@@ -93,11 +97,18 @@ var applyCSS = function () {
                            if(targetNode.style.display != 'none'){
                                if($("#btnBackToLogin").length <=0 )
                                {
-                                   // doSomething
+                                if(language_code=="IT"){
+                                    $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><button id='btnBackToLogin' > Accedi </button> </div>");
+                                   $("#btnBackToLogin").click(function(){
+                                       $("#cancel").click();
+                                   }); 
+                                }
+                                  else{ // doSomething
                                    $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><button id='btnBackToLogin' > Login </button> </div>");
                                    $("#btnBackToLogin").click(function(){
                                        $("#cancel").click();
                                    });
+                                }
                                    
                                }
                            }
