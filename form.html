@@ -81,7 +81,13 @@ var applyCSS = function () {
 
             
         };
+        var fillDDSolar = function () {
+            vr titleDD = $("#title");
 
+            if (titleDD) {
+                console.log($('#title option').length);
+            }
+        };
         var applyB2CAddOns = function() 
           {
             var language_code = GetParameterValues('UI_Locales')?.toUpperCase();
@@ -136,7 +142,7 @@ var applyCSS = function () {
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
-                       
+                        fillDDSolar();
                         applyB2CAddOns();
                     }
                 }, 50);
