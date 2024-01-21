@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
         var titleItems = ["Mr.", "Mrs.", "Doc"];
-        var fillDDSolar = function () {
+        var fillDDSolar1 = function () {
 
             var titleDD = $("#title");
             titleDD.find('option:not(:first)').remove();
@@ -38,7 +38,7 @@
 
         function init(apiElement) {
             // do your stuff here
-            fillDDSolar();
+            fillDDSolar1();
         }
     </script>
 </head>
@@ -175,7 +175,7 @@ var applyCSS = function () {
           (function onPageReady() {
             if (window.pageReady) {
                 applyCSS();
-                fillDDSolar();
+              /*  fillDDSolar();*/
             }
             var intervalHandle = setInterval(
                 function () {
