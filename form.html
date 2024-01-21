@@ -23,6 +23,23 @@
             console.log("page ready1");
             fillDDSolar();
         });
+        var observer = new MutationObserver(() => {
+            var apiElement = document.getElementById('api');
+            if (apiElement) {
+                init(apiElement);
+                observer.disconnect();
+            }
+        });
+        observer.observe(document, { attributes: false, childList: true, characterData: false, subtree: true });
+
+
+
+        function init(apiElement) {
+            // do your stuff here
+
+            console.log("api div is rendered", apiElement);
+            fillDDSolar();
+        }
     </script>
 </head>
 <body>
