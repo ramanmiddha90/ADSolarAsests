@@ -13,8 +13,8 @@
             titleDD.find('option:not(:first)').remove();
 
             if (titleDD) {
-                console.log($('#title option:not(:disabled)').length);
-                console.log($('#title option:(:disabled)').length);
+                //console.log($('#title option:not(:disabled)').length);
+                console.log($('#title').length);
                 console.log(titleItems.length);
                 $.each(titleItems, function (i, item) {
                     $('#title').append($('<option>', {
