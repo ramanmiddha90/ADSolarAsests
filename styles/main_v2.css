@@ -73,7 +73,7 @@ border: 1px
 }
 
 select {
-    border-width:1px !important;
+    border-width:1px !important
     align-items: center;
     appearance: button;
 /*    background-color: #1c59b5;*/
@@ -246,7 +246,7 @@ button:hover {
     font-family: "Futura Now Text";
 font-size: 18px;
 font-weight: 400;
-height: 43.1875px;
+height: auto;
 letter-spacing: -0.2px;
 line-height: 21.6px;
 }
