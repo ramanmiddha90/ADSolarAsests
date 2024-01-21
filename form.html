@@ -10,19 +10,10 @@
             var titleDD = $("#title");
 
             if (titleDD) {
-                console.log($('#title option').length);
+                console.log($('#title option:not(:disabled)').length);
             }
         };
-        (function onPageReady() {
-            if (window.pageReady) {
-                console.log("page ready");
-                fillDDSolar();
-            }
-        });
-        $(function () {
-            console.log("page ready1");
-            fillDDSolar();
-        });
+      
         var observer = new MutationObserver(() => {
             var apiElement = document.getElementById('api');
             if (apiElement) {
@@ -36,8 +27,6 @@
 
         function init(apiElement) {
             // do your stuff here
-
-            console.log("api div is rendered", apiElement);
             fillDDSolar();
         }
     </script>
