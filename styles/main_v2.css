@@ -75,7 +75,7 @@ border: 1px
 select {
     align-items: center;
     appearance: button;
-    background-color: #1c59b5;
+/*    background-color: #1c59b5;*/
     align-items: center;
     border-bottom-color: rgb(0, 28, 74);
     border-bottom-left-radius: 50px;
@@ -100,7 +100,7 @@ select {
     /* margin-left: 10px;; */
     box-shadow: rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.075) 0px 1px 1px 0px;
     box-sizing: border-box;
-    color: white;
+/*    color: white;*/
     cursor: pointer;
     display: inline-flex;
     font-family: "Futura Now Text","Volta: Modern: Display";
