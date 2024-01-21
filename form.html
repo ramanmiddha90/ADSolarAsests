@@ -81,7 +81,9 @@ var applyCSS = function () {
 
             
         };
-
+        var applyB2CAddOns = function () {
+            print($('#title option').length);
+        }
         var applyB2CAddOns = function() 
           {
             var language_code = GetParameterValues('UI_Locales')?.toUpperCase();
@@ -136,7 +138,7 @@ var applyCSS = function () {
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
-                       
+                        LoadDDValues();
                         applyB2CAddOns();
                     }
                 }, 50);
