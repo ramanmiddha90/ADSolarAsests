@@ -14,6 +14,8 @@
 
             if (titleDD) {
                 console.log($('#title option:not(:disabled)').length);
+                console.log($('#title option:(:disabled)').length);
+                console.log(titleItems.length);
                 $.each(titleItems, function (i, item) {
                     $('#title').append($('<option>', {
                         value: item,
