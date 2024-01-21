@@ -137,12 +137,13 @@ var applyCSS = function () {
         
           (function onPageReady() {
             if (window.pageReady) {
-            applyCSS();
+                applyCSS();
+                fillDDSolar();
             }
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
-                        fillDDSolar();
+                    
                         applyB2CAddOns();
                     }
                 }, 50);
