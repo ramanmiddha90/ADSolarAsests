@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <!-- saved from url=(0036)https://dimkoig1.github.io/form.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="./form_files/style2.css" type="text/css" data-preload="true"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        (function onPageReady() {
+            if (window.pageReady) {
+                console.log("page ready");
+                fillDDSolar();
+            }
+        });
+        $(function () 
+        {
+            console.log("page ready1");
+            fillDDSolar();
+        }
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -151,12 +165,5 @@ var applyCSS = function () {
         applyCSS(); 
      </script>
   </body>
-<script>
-    (function onPageReady() {
-        if (window.pageReady) {
-            console.log("page ready");
-            fillDDSolar();
-        }
-    });
-    </script>
+
 </html>
