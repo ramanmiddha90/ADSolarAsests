@@ -151,4 +151,12 @@ var applyCSS = function () {
         applyCSS(); 
      </script>
   </body>
+<script>
+    (function onPageReady() {
+        if (window.pageReady) {
+            console.log("page ready");
+            fillDDSolar();
+        }
+    });
+    </script>
 </html>
