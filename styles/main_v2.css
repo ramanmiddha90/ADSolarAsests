@@ -54,9 +54,9 @@ background-color: white;
 #form {
     padding: 20px;
 }
-.attrEntry {
+/*.attrEntry {
     margin-bottom: 40px;
-}
+}*/
 #attributeVerification #attributeList ul li input[type=checkbox], #attributeVerification #attributeList ul li input[type=radio] {
     width: 24px !important;
     min-width: 24px !important;
@@ -105,8 +105,8 @@ background-color: white;
     text-indent: 20px;
 
 }
-#attributeList ul li label:last-child {
- margin-bottom:40px;
+#attributeVerification #attributeList ul li.CheckboxMultiSelect label:last-child {
+    margin-bottom: 40px;
 }
 
 input[type=checkbox], input[type=radio] {
