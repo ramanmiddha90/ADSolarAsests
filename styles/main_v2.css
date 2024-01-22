@@ -55,7 +55,7 @@ background-color: white;
     padding: 20px;
 }
 
-/*#attributeVerification #attributeList ul li input[type=checkbox], #attributeVerification #attributeList ul li input[type=radio] {
+#attributeVerification #attributeList ul li input[type=checkbox], #attributeVerification #attributeList ul li input[type=radio] {
     width: 24px !important;
     min-width: 24px !important;
     box-shadow: none;
@@ -67,6 +67,7 @@ background-color: white;
     border-width: 1px !important;
     border-radius: 8px;
     border-color: rgb(152, 152, 162);
+    appearance: auto !important; 
 }
 
 
@@ -114,7 +115,7 @@ input[type=checkbox], input[type=radio] {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
-}*/
+}
 
 @media only screen and (min-width: 768px) {
 .wrapper {
@@ -285,7 +286,7 @@ div#api > div.buttons:first-child {
 
 
 input{
-    appearance: none;
+
 background-color: rgb(255, 255, 255);
 border-bottom-color: rgb(152, 152, 162);
 border-bottom-left-radius: 8px;
