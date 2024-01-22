@@ -57,12 +57,16 @@ background-color: white;
 
 #attributeVerification #attributeList ul li input[type=checkbox], #attributeVerification #attributeList ul li input[type=radio] {
     width: 24px !important;
+    min-width: 24px !important;
     box-shadow: none;
     height: 24px;
     display: inline-block;
     float: left;
     clear: left;
     margin: 0.5rem;
+    border-width: 1px !important;
+    border-radius: 8px;
+    border-color: rgb(152, 152, 162);
 }
 
 
@@ -96,6 +100,7 @@ background-color: white;
     width: 70%;
     border-radius: 0.5rem;
     text-indent: 20px;
+
 }
 
 input[type=checkbox], input[type=radio] {
