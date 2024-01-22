@@ -73,45 +73,7 @@ border: 1px
 }
 
 select {
-    border-width:1px !important
-    align-items: center;
-    appearance: button;
-/*    background-color: #1c59b5;*/
-    align-items: center;
-    border-bottom-color: rgb(0, 28, 74);
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-/*    border-bottom-style: none;*/
-    border-bottom-width: 0px;
-    border-image-outset: 0;
-    border-image-repeat: stretch;
-    border-image-slice: 100%;
-    border-image-source: none;
-    border-image-width: 1;
-    border-left-color: rgb(0, 28, 74);
-    /*border-left-style: none;*/
-    border-left-width: 0px;
-    border-right-color: rgb(0, 28, 74);
-    /*border-right-style: none;*/
-    border-right-width: 0px;
-    border-top-color: rgb(0, 28, 74);
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    /*border-top-style: none;*/
-    /* margin-left: 10px;; */
-    box-shadow: rgba(255, 255, 255, 0.15) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.075) 0px 1px 1px 0px;
-    box-sizing: border-box;
-/*    color: white;*/
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "Futura Now Text","Volta: Modern: Display";
-    /* font-family: "Futura Now Text"; */
     font-size: 1rem;
-    font-weight: 500;
-    height: 48px;
-    justify-content: center;
-    letter-spacing: -0.2px;
-    line-height: calc(19.2 / 16 * 1rem);
     margin-bottom: 16px;
     margin-right: 16px;
     padding-bottom: 12px;
@@ -123,14 +85,12 @@ select {
     text-decoration-line: none;
     text-decoration-style: solid;
     text-decoration-thickness: auto;
-    transition-delay: 0s;
-    transition-duration: 0s;
-    transition-property: none;
-    transition-timing-function: ease;
-    user-select: none;
-    vertical-align: middle;
-    width: fit-content;
+    font-family: "Futura Now Text","Volta: Modern: Display";
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-width: 1px !important;
+    border-radius: 8px;
+    border-color: rgb(152, 152, 162);
+    width: 100%;
 }
 button {
     align-items: center;
