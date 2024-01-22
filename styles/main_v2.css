@@ -73,6 +73,7 @@ border: 1px
 }
 
 select {
+    text-align:left;
     font-size: 1rem;
     margin-bottom: 16px;
     margin-right: 16px;
