@@ -55,6 +55,62 @@ background-color: white;
     padding: 20px;
 }
 
+#attributeVerification #attributeList ul li input[type=checkbox], #attributeVerification #attributeList ul li input[type=radio] {
+    width: 24px !important;
+    box-shadow: none;
+    height: 24px;
+    display: inline-block;
+    float: left;
+    clear: left;
+    margin: 0.5rem;
+}
+
+
+#attributeVerification #attributeList ul li input {
+    width: 100%;
+}
+
+#attributeList ul li input[type=checkbox] {
+    border: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    margin: 0;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    text-indent: 0;
+}
+
+
+#attributeList ul li input {
+    height: 50px;
+    width: 70%;
+    border-radius: 0.5rem;
+    text-indent: 20px;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin: 4px 0 0;
+    margin-top: 1px\9;
+    line-height: normal;
+}
+
+input[type=checkbox], input[type=radio] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+
 @media only screen and (min-width: 768px) {
 .wrapper {
 width:468px;
