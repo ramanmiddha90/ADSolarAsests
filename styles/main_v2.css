@@ -257,7 +257,8 @@ button:hover {
     clear: both;
 }
 
-#signInName_label, #password_label, #email_label, #newPassword_label, #reenterPassword_label {
+#signInName_label, #password_label, #email_label, #newPassword_label, #reenterPassword_label, scoutUserFirstName_label, scoutUserLastName_label,
+profession_label, professionalNumber_label, medicalName_label, region_label, country_label, TnCsAck_label {
     display: none;
 }
 
