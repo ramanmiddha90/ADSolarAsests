@@ -261,6 +261,10 @@ button:hover {
     margin-top:20px;
 }
 
+fieldset{
+    border:none;
+}
+
 #signInName_label, #password_label, #email_label, #newPassword_label, #title_label, #reenterPassword_label, #scoutUserFirstName_label, #scoutUserLastName_label,
 #profession_label, #professionalNumber_label, #medicalName_label, #region_label, #country_label, #TnCsAck_label, .heading {
     display: none;
