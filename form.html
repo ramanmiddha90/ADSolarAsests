@@ -24,6 +24,22 @@
                 });
             }
         };
+
+        var fillDDProfession = function () {
+            var profession = $("#profession");
+            if (profession) {
+                var jsonItems = JSON.parse($("#specialities").val())
+                console.log(jsonItems);
+                profession.find('option:not(:first)').remove();
+                $.each(jsonItems.values, function (i, item) {
+                    $('#profession').append($('<option>', {
+                        value: item.label,
+                        text: item.value
+
+                    }));
+                });
+            }
+        };
       
         var observer = new MutationObserver(() => {
             var apiElement = document.getElementById('api');
@@ -34,11 +50,10 @@
         });
         observer.observe(document, { attributes: false, childList: true, characterData: false, subtree: true });
 
-
-
         function init(apiElement) {
             // do your stuff here
-            fillDDSolar1();
+            fillDDSolar();
+            fillDDProfession();
         }
     </script>
 </head>
