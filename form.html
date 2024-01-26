@@ -31,10 +31,15 @@
                 var jsonItems = JSON.parse($("#specialities").val())
                 console.log(jsonItems);
                 profession.find('option:not(:first)').remove();
+                $('#profession').append($('<option>', {
+                    value:"",
+                    text: "Select Profession"
+
+                }));
                 $.each(jsonItems.values, function (i, item) {
                     $('#profession').append($('<option>', {
-                        value: item.label,
-                        text: item.value
+                        value: item.value,
+                        text: item.label
 
                     }));
                 });
