@@ -6,7 +6,7 @@
     <!-- <link rel="stylesheet" href="./form_files/style2.css" type="text/css" data-preload="true"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
-        var titleItems = ["Title","Mr.", "Mrs.", "Doc"];
+        var titleItems = ["Title", "Mr.", "Mrs.", "Doc"];
         var fillDDSolar1 = function () {
 
             var titleDD = $("#title");
@@ -32,7 +32,7 @@
                 console.log(jsonItems);
                 profession.find('option:not(:first)').remove();
                 $('#profession').append($('<option>', {
-                    value:"",
+                    value: "",
                     text: "Select Profession"
 
                 }));
@@ -45,7 +45,7 @@
                 });
             }
         };
-      
+
         var observer = new MutationObserver(() => {
             var apiElement = document.getElementById('api');
             if (apiElement) {
@@ -61,6 +61,137 @@
             fillDDProfession();
         }
     </script>
+
+    <script>
+        function GetVersionInreferrer(param) {
+            var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if (urlparam[0].toUpperCase() == param.toUpperCase()) {
+                    return urlparam[1];
+                }
+
+            }
+            return null;
+        }
+        function GetParameterValues(param) {
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if (urlparam[0].toUpperCase() == param.toUpperCase()) {
+                    return urlparam[1];
+                }
+
+            }
+            var versionValueInReferrer = GetVersionInreferrer(param);
+
+            if (versionValueInReferrer != null)
+                return versionValueInReferrer;
+            return null;
+        };
+
+
+
+        var applyCSS = function () {
+            var version = GetParameterValues('Version');
+
+
+            // alert(styleURL)  ;
+            let head = document.getElementsByTagName('HEAD')[0];
+
+            // Create new link Element
+            let link = document.createElement('link');
+
+            // set the attributes for link element
+            link.rel = 'stylesheet';
+
+            link.type = 'text/css';
+
+            if (version == 2) {
+                // Get HTML head element
+                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
+                $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg");
+            }
+            else if (version == 3) {
+                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
+                $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz_logo_sl.svg");
+
+            }
+            else {
+                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main.css";
+                $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6-1.svg");
+            }
+            // Append link element to HTML head
+            head.appendChild(link);
+
+
+
+
+        };
+        var fillDDSolar = function () {
+            var titleDD = $("#title");
+
+            if (titleDD) {
+                console.log($('#title option').length);
+            }
+        };
+        var applyB2CAddOns = function () {
+            var language_code = GetParameterValues('UI_Locales')?.toUpperCase();
+
+            // console.log(language_code);
+
+            var createButton = document.querySelector("#continue");
+            var changeEmailButton = document.querySelector("#email_ver_but_edit");
+            if (createButton) {
+                $("#continue").on("click", function () {
+                    $("#divBackToLogin").remove();
+                    var targetNode = document.getElementById('claimVerificationServerError');
+                    var observer = new MutationObserver(function () {
+                        if (targetNode.style.display != 'none') {
+                            if ($("#btnBackToLogin").length <= 0) {
+                                if (language_code == "IT") {
+                                    $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><button id='btnBackToLogin' > Accedi </button> </div>");
+                                    $("#btnBackToLogin").click(function () {
+                                        $("#cancel").click();
+                                    });
+                                }
+                                else { // doSomething
+                                    $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><button id='btnBackToLogin' > Login </button> </div>");
+                                    $("#btnBackToLogin").click(function () {
+                                        $("#cancel").click();
+                                    });
+                                }
+
+                            }
+                        }
+                    });
+                    observer.observe(targetNode, { attributes: true, childList: true });
+                });
+            }
+            $("#email_ver_but_edit").on("click", function () {
+                $("#divBackToLogin").remove();
+            });
+            $("#emailVerificationControl_but_change_claims").on("click", function () {
+                $("#divBackToLogin").remove();
+            });
+
+        };
+
+        (function onPageReady() {
+            if (window.pageReady) {
+                applyCSS();
+                /*  fillDDSolar();*/
+            }
+            var intervalHandle = setInterval(
+                function () {
+                    if (window.pageReady) {
+
+                        applyB2CAddOns();
+                    }
+                }, 50);
+        }());
+        applyCSS();
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -71,142 +202,6 @@
         </div>
     </div>
 
-    <script>
-function GetVersionInreferrer(param)
-{
-    var url = document.referrer.slice(document.referrer.indexOf('?') + 1).split('&');  
-    for (var i = 0; i < url.length; i++) {  
-        var urlparam = url[i].split('=');  
-        if (urlparam[0].toUpperCase() == param.toUpperCase()) {  
-            return urlparam[1];  
-        }  
-        
-    }  
-        return null;
-}
-function GetParameterValues(param) {  
-                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');  
-                for (var i = 0; i < url.length; i++) {  
-                    var urlparam = url[i].split('=');  
-                    if (urlparam[0].toUpperCase() == param.toUpperCase()) {  
-                        return urlparam[1];  
-                    }  
-                   
-                }  
-                var versionValueInReferrer=GetVersionInreferrer(param);
-                
-                if(versionValueInReferrer!=null)
-                    return versionValueInReferrer;
-                 return null;
-            }  ;
-
-
-
-var applyCSS = function () { 
-            var version = GetParameterValues('Version');
-           
-            
-            // alert(styleURL)  ;
-            let head = document.getElementsByTagName('HEAD')[0];
-            
-            // Create new link Element
-            let link = document.createElement('link');
-
-            // set the attributes for link element
-            link.rel = 'stylesheet';
-
-            link.type = 'text/css';
-
-            if(version==2){
-                // Get HTML head element
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
-                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg");
-            }
-            else if(version==3){
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
-                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz_logo_sl.svg");
-           
-            }
-            else{
-                link.href =  "https://ramanmiddha90.github.io/ADSolarAsests/styles/main.css";
-                $("#logo").attr("src","https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6-1.svg");
-            }
-                // Append link element to HTML head
-            head.appendChild(link);
-
-            
-
-            
-        };
-        var fillDDSolar = function () {
-            var titleDD = $("#title");
-
-            if (titleDD) {
-                console.log($('#title option').length);
-            }
-        };
-        var applyB2CAddOns = function() 
-          {
-            var language_code = GetParameterValues('UI_Locales')?.toUpperCase();
-
-            // console.log(language_code);
-
-            var createButton=document.querySelector("#continue");
-            var changeEmailButton=document.querySelector("#email_ver_but_edit");
-            if(createButton)
-            {
-                $("#continue").on("click",function(){
-                   $("#divBackToLogin").remove();
-                    var targetNode = document.getElementById('claimVerificationServerError');
-                    var observer = new MutationObserver(function(){
-                           if(targetNode.style.display != 'none'){
-                               if($("#btnBackToLogin").length <=0 )
-                               {
-                                if(language_code=="IT"){
-                                    $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><button id='btnBackToLogin' > Accedi </button> </div>");
-                                   $("#btnBackToLogin").click(function(){
-                                       $("#cancel").click();
-                                   }); 
-                                }
-                                  else{ // doSomething
-                                   $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><button id='btnBackToLogin' > Login </button> </div>");
-                                   $("#btnBackToLogin").click(function(){
-                                       $("#cancel").click();
-                                   });
-                                }
-                                   
-                               }
-                           }
-                       });
-                   observer.observe(targetNode, { attributes: true, childList: true });
-                });
-            }
-            $("#email_ver_but_edit").on("click",function()
-            {
-                $("#divBackToLogin").remove();
-            });
-            $("#emailVerificationControl_but_change_claims").on("click",function()
-            {
-                $("#divBackToLogin").remove();
-            });
-        
-          };
-        
-          (function onPageReady() {
-            if (window.pageReady) {
-                applyCSS();
-              /*  fillDDSolar();*/
-            }
-            var intervalHandle = setInterval(
-                function () {
-                    if (window.pageReady) {
-                    
-                        applyB2CAddOns();
-                    }
-                }, 50);
-        }());
-        applyCSS(); 
-     </script>
   </body>
 
 </html>
