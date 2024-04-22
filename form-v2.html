@@ -155,6 +155,12 @@
                                         $("#cancel").click();
                                     });
                                 }
+                                else if (language_code == "PL") {
+                                    $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><button id='btnBackToLogin' > Zaloguj sie </button> </div>");
+                                    $("#btnBackToLogin").click(function () {
+                                        $("#cancel").click();
+                                    });
+                                }
                                 else { // doSomething
                                     $("#claimVerificationServerError").after("<div id='divBackToLogin' style='margin-top:10px;margin-bottom:10px;'><button id='btnBackToLogin' > Login </button> </div>");
                                     $("#btnBackToLogin").click(function () {
