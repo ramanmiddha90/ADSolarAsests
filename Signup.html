@@ -5,62 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="./form_files/style2.css" type="text/css" data-preload="true"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script>
-        var titleItems = ["Title","Mr.", "Mrs.", "Doc"];
-        var fillDDSolar1 = function () {
-
-            var titleDD = $("#title");
-            titleDD.find('option:not(:first)').remove();
-
-            if (titleDD) {
-                //console.log($('#title option:not(:disabled)').length);
-                console.log($('#title').length);
-                console.log(titleItems.length);
-                $.each(titleItems, function (i, item) {
-                    $('#title').append($('<option>', {
-                        value: item,
-                        text: item
-                    }));
-                });
-            }
-        };
-
-        var fillDDProfession = function () {
-            var profession = $("#profession");
-            if (profession) {
-                var jsonItems = JSON.parse($("#specialities").val())
-                console.log(jsonItems);
-                profession.find('option:not(:first)').remove();
-                $('#profession').append($('<option>', {
-                    value:"",
-                    text: "Select Profession"
-
-                }));
-                $.each(jsonItems.values, function (i, item) {
-                    $('#profession').append($('<option>', {
-                        value: item.value,
-                        text: item.label
-
-                    }));
-                });
-            }
-        };
-      
-        var observer = new MutationObserver(() => {
-            var apiElement = document.getElementById('api');
-            if (apiElement) {
-                init(apiElement);
-                observer.disconnect();
-            }
-        });
-        observer.observe(document, { attributes: false, childList: true, characterData: false, subtree: true });
-
-        function init(apiElement) {
-            // do your stuff here
-            fillDDSolar();
-            fillDDProfession();
-        }
-    </script>
+   
 </head>
 <body>
     <div class="wrapper">
@@ -138,13 +83,7 @@ var applyCSS = function () {
 
             
         };
-        var fillDDSolar = function () {
-            var titleDD = $("#title");
-
-            if (titleDD) {
-                console.log($('#title option').length);
-            }
-        };
+       
         var applyB2CAddOns = function() 
           {
             var language_code = GetParameterValues('UI_Locales')?.toUpperCase();
@@ -195,7 +134,6 @@ var applyCSS = function () {
           (function onPageReady() {
             if (window.pageReady) {
                 applyCSS();
-              /*  fillDDSolar();*/
             }
             var intervalHandle = setInterval(
                 function () {
