@@ -107,7 +107,13 @@
 
                                 $("#claimVerificationServerError").after(loginButtonHTML);
                                 $("#btnBackToLogin").click(function () {
-                                    $("#cancel").click();
+                                    if (language_code == "RU") {
+                                        var baseURL = "https://www.my-sandoz.com/ru-ru/";
+                                        window.location.replace(baseURL);
+                                    }
+                                    else {
+                                        $("#cancel").click();
+                                    }
                                 });
                             }
                         }
