@@ -94,7 +94,7 @@
 
         var applyCSS = function () {
             var version = GetParameterValues('Version');
-
+            var language_code = GetParameterValues('UI_Locales')?.toUpperCase();
 
             // alert(styleURL)  ;
             let head = document.getElementsByTagName('HEAD')[0];
@@ -106,27 +106,25 @@
             link.rel = 'stylesheet';
 
             link.type = 'text/css';
-
-            if (version == 2) {
-                // Get HTML head element
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
-                $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg");
-            }
-            else if (version == 3) {
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
+            link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main_v2.css";
+            if (language_code == "SL") {
                 $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz_logo_sl.svg");
-
             }
             else {
-                link.href = "https://ramanmiddha90.github.io/ADSolarAsests/styles/main.css";
-                $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6-1.svg");
+                if (version == 2) {
+                    // Get HTML head element
+                    $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6.svg");
+                }
+                else if (version == 3) {
+                    $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz_logo_sl.svg");
+
+                }
+                else {
+                    $("#logo").attr("src", "https://ramanmiddha90.github.io/ADSolarAsests/objects/sandoz-logo_6-1.svg");
+                }
             }
             // Append link element to HTML head
             head.appendChild(link);
-
-
-
-
         };
         var fillDDSolar = function () {
             var titleDD = $("#title");
