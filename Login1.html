@@ -45,6 +45,7 @@
             return null;
         };
         var setObserver = function () {
+            debugger;
             const observer = new MutationObserver(() => {
                 const err = $('.error');
                 debugger;
@@ -103,7 +104,7 @@
             var intervalHandle = setInterval(
                 function () {
                     if (window.pageReady) {
-
+                        setObserver();
 
                     }
                 }, 50);
