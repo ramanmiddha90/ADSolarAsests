@@ -46,7 +46,8 @@
         };
         var setObserver = function () {
             const observer = new MutationObserver(() => {
-                const err = $('.error.itemLevel');
+                const err = $('.error');
+                debugger;
                 if (err.length && err.text().includes("The username or password provided")) {
                     err.text("Please check your email and password again.");
                 }
